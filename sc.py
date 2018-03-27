@@ -1,24 +1,25 @@
+# -*- coding: utf-8 -*-
 from selenium import webdriver
 import pandas
 
 """***************************************
-‚à‚ë‚à‚ë‚Ìİ’è
+ï¿½ï¿½ï¿½ï¿½ï¿½Ìİ’ï¿½
 ***************************************"""
 browser = webdriver.Chrome(executable_path='/mnt/c/workspace/pydev/chromedriver.exe') 
-df = pandas.read_csv('default.csv', index_col=0) #——D–¼E——D‚Ì‰æ‘œURL‚ª—ñ‚É“ü‚Á‚Ä‚¢‚é
-url = "http://wav.tv/actresses/" #ƒGƒƒTƒCƒg‚Ì——DƒŠƒXƒg‚Ìƒy[ƒW
+df = pandas.read_csv('default.csv', index_col=0) #ï¿½ï¿½ï¿½Dï¿½ï¿½ï¿½Eï¿½ï¿½ï¿½Dï¿½Ì‰æ‘œURLï¿½ï¿½ï¿½ï¿½É“ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½
+url = "http://wav.tv/actresses/" #ï¿½Gï¿½ï¿½ï¿½Tï¿½Cï¿½gï¿½Ìï¿½ï¿½Dï¿½ï¿½ï¿½Xï¿½gï¿½Ìƒyï¿½[ï¿½W
 
 """******************************
-CSS SELECTOR‚Ìİ’è
+CSS SELECTORï¿½Ìİ’ï¿½
 ******************************"""
 
-PAGER_NEXT = "a.m-pagination--next.is-last.step" #Ÿ‚Öƒ{ƒ^ƒ“
+PAGER_NEXT = "a.m-pagination--next.is-last.step" #ï¿½ï¿½ï¿½Öƒ{ï¿½^ï¿½ï¿½
 POSTS = "div.m-actress-wrap"
-ACTRESS_NAME = ".m-actress--title" #——D–¼
-IMAGE = ".m-actress--thumbnail-img img" #ƒTƒ€ƒlƒCƒ‹‰æ‘œ‚ÌURLAsrc‚Å‰æ‘œƒtƒ@ƒCƒ‹‚ğæ“¾‚Å‚«‚é
+ACTRESS_NAME = ".m-actress--title" #ï¿½ï¿½ï¿½Dï¿½ï¿½
+IMAGE = ".m-actress--thumbnail-img img" #ï¿½Tï¿½ï¿½ï¿½lï¿½Cï¿½ï¿½ï¿½æ‘œï¿½ï¿½URLï¿½Asrcï¿½Å‰æ‘œï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½æ“¾ï¿½Å‚ï¿½ï¿½ï¿½
 
 """***************************************
-Às•”•ª
+ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½
 ***************************************"""
 
 browser.get(url)
@@ -29,7 +30,7 @@ while True: #continue until getting the last page
 
    if len(browser.find_elements_by_css_selector(PAGER_NEXT)) > 0:
        print("Starting to get posts...")
-       posts = browser.find_elements_by_css_selector(POSTS) #ƒy[ƒW“à‚Ìƒ^ƒCƒgƒ‹•¡”
+       posts = browser.find_elements_by_css_selector(POSTS) #ï¿½yï¿½[ï¿½Wï¿½ï¿½Ìƒ^ï¿½Cï¿½gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
        print (len(posts))
        for post in posts:
            try:
