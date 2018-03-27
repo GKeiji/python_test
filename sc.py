@@ -5,7 +5,7 @@ import pandas
 """***************************************
 �����̐ݒ�
 ***************************************"""
-browser = webdriver.Chrome(executable_path='/mnt/c/workspace/pydev/chromedriver.exe') 
+browser = webdriver.Chrome(executable_path='C:\Program Files (x86)\Google\Chrome\Application\chrome.exe') 
 df = pandas.read_csv('default.csv', index_col=0) #���D���E���D�̉摜URL����ɓ����Ă���
 url = "http://wav.tv/actresses/" #�G���T�C�g�̏��D���X�g�̃y�[�W
 
